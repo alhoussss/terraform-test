@@ -27,11 +27,11 @@ resource "google_compute_network" "vpc_network" {
   name = "vpc-network"
 }
 
-terraform {
+/*terraform {
   backend "gcs" {
     bucket = "store-alhousseini-env"
   } 
-}
+} */
 
 
 resource "google_storage_bucket" "auto-al" {
