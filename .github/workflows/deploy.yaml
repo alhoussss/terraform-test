@@ -48,9 +48,9 @@ jobs:
       #       issue-body: "Review the terraform plan, then approve or deny the deployment of v1.0.0 to prod."
       #       exclude-workflow-initiator-as-approver: false
 
-      - name: Terraform apply
-        run: |
-          terraform apply -auto-approve
+      # - name: Terraform apply
+      #   run: |
+      #     terraform apply -auto-approve
 
       - name: Terraform destroy
         run: |
