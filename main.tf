@@ -1,8 +1,3 @@
-resource "google_service_account" "default" {
-  account_id   = "august-snowfall-481313-d1"
-  display_name = "VM Instance"
-}
-
 resource "google_compute_instance" "default" {
   name         = "my-instance"
   machine_type = "n2-standard-2"
