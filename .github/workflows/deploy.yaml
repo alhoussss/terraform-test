@@ -33,7 +33,7 @@ jobs:
 
       - name: Terraform init and validate
         run: |
-          terraform init -reconfigure
+          terraform init
 
       - name: Terraform plan
         run: |
@@ -48,10 +48,10 @@ jobs:
       #       issue-body: "Review the terraform plan, then approve or deny the deployment of v1.0.0 to prod."
       #       exclude-workflow-initiator-as-approver: false
 
-      - name: Terraform apply
-        run: |
-          terraform apply -auto-approve
-
-      # - name: Terraform destroy
+      # - name: Terraform apply
       #   run: |
-      #     terraform destroy -auto-approve
+      #     terraform apply -auto-approve
+
+      - name: Terraform destroy
+        run: |
+          terraform destroy -auto-approve
