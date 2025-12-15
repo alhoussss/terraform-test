@@ -24,7 +24,7 @@ resource "google_compute_network" "vpc_network" {
 
 terraform {
   backend "gcs" {
-    bucket = "store-alhousseini-env"
+    bucket = "terraform-state-alhousseini"
   } 
 }
 
