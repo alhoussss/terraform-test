@@ -33,7 +33,7 @@ jobs:
 
       - name: Terraform init and validate
         run: |
-          terraform init
+          terraform init -migrate-state
 
       - name: Terraform plan
         run: |
