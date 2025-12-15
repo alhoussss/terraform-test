@@ -33,17 +33,11 @@ jobs:
 
       - name: Terraform init and validate
         run: |
-          terraform init -migrate-state
+          terraform init
 
-      # - name: Terraform plan
-      #   run: |
-      #     terraform plan
-
-      - name: Import existing resources
+      - name: Terraform plan
         run: |
-          terraform import google_compute_instance.default projects/august-snowfall-481313-d1/zones/us-central1-a/instances/my-instance
-          terraform import google_compute_network.vpc_network projects/august-snowfall-481313-d1/global/networks/vpc-network
-          terraform import google_storage_bucket.auto-al store-alhousseini-env
+          terraform plan
 
       #   - uses: trstringer/manual-approval@v1
       #     with:
@@ -54,9 +48,9 @@ jobs:
       #       issue-body: "Review the terraform plan, then approve or deny the deployment of v1.0.0 to prod."
       #       exclude-workflow-initiator-as-approver: false
 
-      # - name: Terraform apply
-      #   run: |
-      #     terraform apply -auto-approve
+      - name: Terraform apply
+        run: |
+          terraform apply -auto-approve
 
       # - name: Terraform destroy
       #   run: |
