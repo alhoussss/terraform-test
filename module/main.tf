@@ -1,5 +1,5 @@
 resource "google_compute_instance" "default" {
-  name         = "my-instance"
+  name         = "my-instance-${count.index}"
   count         = length(var.instances)
   machine_type = element(var.instances, count.index)
   zone         = "us-central1-a"
